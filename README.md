@@ -1,4 +1,10 @@
 # sat-machine
-Files to grade and analyze many SATs at once
+Files to grade and analyze many SATs at once.
 
-See https://docs.google.com/spreadsheets/d/1FK8rT0JR8h1VxZeEezu8-_GSPH1bq-cSB6kryUW34zM/edit#gid=0 for the proper formatting.
+On https://docs.google.com/spreadsheets/d/1FK8rT0JR8h1VxZeEezu8-_GSPH1bq-cSB6kryUW34zM/edit#gid=0, if given the second and fourth spreadsheets in CSV format, the program ScoreWriter will spit out the third spreadsheet in CSV format, with a 1 wherever a question is wrong and a 0 wherever a question is right.
+
+Download all of the files in the folder and navigate to the directory in the terminal. The usage is as follows:
+java ScoreWriter [CSV of correct answers] [CSV of student answers]
+
+For the example in the folder, swap the command line arguments with
+example_correct_answers.csv and example_student_answers.csv, respectively.
