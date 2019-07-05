@@ -9,4 +9,4 @@ java ScoreWriter [CSV of correct answers] [CSV of student answers].
 For the example in the folder, swap the command line arguments with
 example_correct_answers.csv and example_student_answers.csv, respectively.
 
-To put the results of the program into a CSV like that in the Google Spreadsheet, add ">> [your title here].csv" to the end of the command line statement. 
+To put the results of the program into a CSV like that in the Google Spreadsheet, add ">> [your title here].csv" (without the quotes) to the end of the command line statement. 
