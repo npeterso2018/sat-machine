@@ -1,5 +1,5 @@
 # sat-machine
-Files to grade and analyze many SATs at once. Improved SAT grading efficiency at KenSAP by 389% and gave valuable data that otherwise would not have been available, if graded by hand.
+Files to grade and analyze many SATs at once. Because of this, SAT grading at KenSAP became 4x faster, and the organization was able to view valuable data that otherwise would not have been available if graded by hand.
 
 Background:
 Given a lump of SAT answers from 21 KenSAP students and nothing else, I created the system below (the google docs link) to grade and efficiently understand their SATs. Using Java skills from my Data Structures and Algorithms class in the Spring of 2019, I built a set of files (totalling 567 lines of code) to replicate this spreadsheet in a CSV.
