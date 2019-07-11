@@ -1,6 +1,9 @@
 # sat-machine
 Files to grade and analyze many SATs at once.
 
+Background:
+Given a lump of SAT answers from 21 KenSAP students and nothing else, I created the system below (the google docs link) to grade and efficiently understand their SATs. Using Java skills from my Data Structures and Algorithms class in the Spring of 2019, I built a set of files (totalling 567 lines of code) to replicate this spreadsheet in a CSV.
+
 On https://docs.google.com/spreadsheets/d/1FK8rT0JR8h1VxZeEezu8-_GSPH1bq-cSB6kryUW34zM/edit#gid=0, if given the second and fourth spreadsheets in CSV format, the program ScoreWriter will spit out the third spreadsheet in CSV format, with a 1 wherever a question is wrong and a 0 wherever a question is right.
 
 Download all of the files in the folder, open up Terminal, and cd to the SAT Machine directory in the terminal.
