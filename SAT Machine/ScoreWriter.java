@@ -7,6 +7,8 @@ Writes a set of CSVs, made for Excel / Google Sheets, that gives an explanation 
 You must use a command line prompt to put the output of this program into a file, otherwise it will only print the results.
 
 */
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ScoreWriter{
 	
@@ -134,7 +136,94 @@ public class ScoreWriter{
 		}
 		System.out.println("\n");
 		
-		/*//prints the data on the subcategories
-		System.out.print("Total Wrongs by Subcategory,Count Wrong,,,,,Percent of Subcategory Wrong,,,,,Subcategory Size")*/
+		//prints the data on the subcategories
+		System.out.println("Total Wrongs by Subcategory,Count Wrong,,,,,Percent of Subcategory Wrong,,,,,Subcategory Size");
+		
+		//starts by creating a list of subcategories
+		ArrayList uniqueReading = new ArrayList<String>();
+		for(int i = 0; i < 52; i++){
+			if(!(uniqueReading.contains(exam[0].getReadingScore().list[i].getType()))){uniqueReading.add(exam[0].getReadingScore().list[i].getType());}
+		}
+		Collections.sort(uniqueReading);
+		ArrayList uniqueWriting = new ArrayList<String>();
+		for(int i = 0; i < 44; i++){
+			if(!(uniqueWriting.contains(exam[0].getWritingScore().list[i].getType()))){uniqueWriting.add(exam[0].getWritingScore().list[i].getType());}
+		}
+		Collections.sort(uniqueWriting);
+		ArrayList uniqueMathNC = new ArrayList<String>();
+		for(int i = 0; i < 20; i++){
+			if(!(uniqueMathNC.contains(exam[0].getMathNoCalcScore().list[i].getType()))){uniqueMathNC.add(exam[0].getMathNoCalcScore().list[i].getType());}
+		}
+		Collections.sort(uniqueMathNC);
+		ArrayList uniqueMathC = new ArrayList<String>();
+		for(int i = 0; i < 38; i++){
+			if(!(uniqueMathC.contains(exam[0].getMathCalcScore().list[i].getType()))){uniqueMathC.add(exam[0].getMathCalcScore().list[i].getType());}
+		}
+		Collections.sort(uniqueMathC);
+		
+		//goes through and tallies up the number in each category wrong and prints it out
+		for(int i = 0; i < uniqueReading.size(); i++){
+			int w = 0;
+			int c = 0;
+			for(int s = 0; s < n; s++){
+				for(int q = 0; q < 52; q++){
+					if(exam[s].getReadingScore().list[q].getType().equals(uniqueReading.get(i))){
+						c++;
+						if(!(exam[s].getReadingScore().list[q].isCorrect())){
+							w++;
+						}
+					}
+				}
+			}
+			System.out.println(uniqueReading.get(i) + "," + w + ",,,,," + c / n + ",,,,," + (float)w / (float)c);
+		}
+		System.out.println();
+		for(int i = 0; i < uniqueWriting.size(); i++){
+			int w = 0;
+			int c = 0;
+			for(int s = 0; s < n; s++){
+				for(int q = 0; q < 44; q++){
+					if(exam[s].getWritingScore().list[q].getType().equals(uniqueWriting.get(i))){
+						c++;
+						if(!(exam[s].getWritingScore().list[q].isCorrect())){
+							w++;
+						}
+					}
+				}
+			}
+			System.out.println(uniqueWriting.get(i) + "," + w + ",,,,," + c / n + ",,,,," + (float)w / (float)c);
+		}
+		System.out.println();
+		for(int i = 0; i < uniqueMathNC.size(); i++){
+			int w = 0;
+			int c = 0;
+			for(int s = 0; s < n; s++){
+				for(int q = 0; q < 20; q++){
+					if(exam[s].getMathNoCalcScore().list[q].getType().equals(uniqueMathNC.get(i))){
+						c++;
+						if(!(exam[s].getMathNoCalcScore().list[q].isCorrect())){
+							w++;
+						}
+					}
+				}
+			}
+			System.out.println(uniqueMathNC.get(i) + "," + w + ",,,,," + c / n + ",,,,," + (float)w / (float)c);
+		}
+		System.out.println();
+		for(int i = 0; i < uniqueMathC.size(); i++){
+			int w = 0;
+			int c = 0;
+			for(int s = 0; s < n; s++){
+				for(int q = 0; q < 38; q++){
+					if(exam[s].getMathCalcScore().list[q].getType().equals(uniqueMathC.get(i))){
+						c++;
+						if(!(exam[s].getMathCalcScore().list[q].isCorrect())){
+							w++;
+						}
+					}
+				}
+			}
+			System.out.println(uniqueMathC.get(i) + "," + w + ",,,,," + c / n + ",,,,," + (float)w / (float)c);
+		}
 	}	
 }
