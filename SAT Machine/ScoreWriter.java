@@ -40,7 +40,7 @@ public class ScoreWriter{
 			System.out.print(exam[i].getName() + ",");
 			for(int j = 0; j < 52; j++){
 				if(!exam[i].getReadingScore().list[j].isCorrect()){totalWrong++;}
-				System.out.print((exam[i].getReadingScore().list[j].isCorrect() ? 1 : 0) + ",");
+				System.out.print((exam[i].getReadingScore().list[j].isCorrect() ? 0 : 1) + ",");
 			}
 			System.out.print(totalWrong + "," + (52 - totalWrong));
 			System.out.print("\n");
@@ -53,7 +53,7 @@ public class ScoreWriter{
 			System.out.print(exam[i].getName() + ",");
 			for(int j = 0; j < 44; j++){
 				if(!exam[i].getReadingScore().list[j].isCorrect()){totalWrong++;}
-				System.out.print((exam[i].getWritingScore().list[j].isCorrect() ? 1 : 0) + ",");
+				System.out.print((exam[i].getWritingScore().list[j].isCorrect() ? 0 : 1) + ",");
 			}
 			for(int j = 44; j < 52; j++){System.out.print(",");}
 			System.out.print(totalWrong + "," + (44 - totalWrong));
@@ -67,7 +67,7 @@ public class ScoreWriter{
 			System.out.print(exam[i].getName() + ",");
 			for(int j = 0; j < 20; j++){
 				if(!exam[i].getReadingScore().list[j].isCorrect()){totalWrong++;}
-				System.out.print((exam[i].getReadingScore().list[j].isCorrect() ? 1 : 0) + ",");
+				System.out.print((exam[i].getReadingScore().list[j].isCorrect() ? 0 : 1) + ",");
 			}
 			for(int j = 20; j < 52; j++){System.out.print(",");}
 			System.out.print(totalWrong + "," + (20 - totalWrong));
@@ -81,7 +81,7 @@ public class ScoreWriter{
 			System.out.print(exam[i].getName() + ",");
 			for(int j = 0; j < 38; j++){
 				if(!exam[i].getReadingScore().list[j].isCorrect()){totalWrong++;}
-				System.out.print((exam[i].getReadingScore().list[j].isCorrect() ? 1 : 0) + ",");
+				System.out.print((exam[i].getReadingScore().list[j].isCorrect() ? 0 : 1) + ",");
 			}
 			for(int j = 38; j < 52; j++){System.out.print(",");}
 			System.out.print(totalWrong + "," + (38 - totalWrong));
