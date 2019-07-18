@@ -52,7 +52,7 @@ public class ScoreWriter{
 			//prints writing results
 			System.out.print(exam[i].getName() + ",");
 			for(int j = 0; j < 44; j++){
-				if(!exam[i].getReadingScore().list[j].isCorrect()){totalWrong++;}
+				if(!exam[i].getWritingScore().list[j].isCorrect()){totalWrong++;}
 				System.out.print((exam[i].getWritingScore().list[j].isCorrect() ? 0 : 1) + ",");
 			}
 			for(int j = 44; j < 52; j++){System.out.print(",");}
@@ -66,8 +66,8 @@ public class ScoreWriter{
 			//prints reading results
 			System.out.print(exam[i].getName() + ",");
 			for(int j = 0; j < 20; j++){
-				if(!exam[i].getReadingScore().list[j].isCorrect()){totalWrong++;}
-				System.out.print((exam[i].getReadingScore().list[j].isCorrect() ? 0 : 1) + ",");
+				if(!exam[i].getMathNoCalcScore().list[j].isCorrect()){totalWrong++;}
+				System.out.print((exam[i].getMathNoCalcScore().list[j].isCorrect() ? 0 : 1) + ",");
 			}
 			for(int j = 20; j < 52; j++){System.out.print(",");}
 			System.out.print(totalWrong + "," + (20 - totalWrong));
@@ -81,7 +81,7 @@ public class ScoreWriter{
 			System.out.print(exam[i].getName() + ",");
 			for(int j = 0; j < 38; j++){
 				if(!exam[i].getReadingScore().list[j].isCorrect()){totalWrong++;}
-				System.out.print((exam[i].getReadingScore().list[j].isCorrect() ? 0 : 1) + ",");
+				System.out.print((exam[i].getMathCalcScore().list[j].isCorrect() ? 0 : 1) + ",");
 			}
 			for(int j = 38; j < 52; j++){System.out.print(",");}
 			System.out.print(totalWrong + "," + (38 - totalWrong));
@@ -117,7 +117,7 @@ public class ScoreWriter{
 		for(int i = 0; i < 20; i++){
 			int qty = 0;
 			for(int j = 0; j < n; j++){
-				if(!(exam[j].getWritingScore().list[i].isCorrect())){
+				if(!(exam[j].getMathNoCalcScore().list[i].isCorrect())){
 					qty++;
 				}
 			}
@@ -128,7 +128,7 @@ public class ScoreWriter{
 		for(int i = 0; i < 38; i++){
 			int qty = 0;
 			for(int j = 0; j < n; j++){
-				if(!(exam[j].getWritingScore().list[i].isCorrect())){
+				if(!(exam[j].getMathCalcScore().list[i].isCorrect())){
 					qty++;
 				}
 			}
@@ -175,9 +175,8 @@ public class ScoreWriter{
 					}
 				}
 			}
-			System.out.println(uniqueReading.get(i) + "," + w + ",,,,," + c / n + ",,,,," + (float)w / (float)c);
+			System.out.println(uniqueReading.get(i) + "," + w + ",,,,," + (float)w / (float)c + ",,,,," + c / n);
 		}
-		System.out.println();
 		for(int i = 0; i < uniqueWriting.size(); i++){
 			int w = 0;
 			int c = 0;
@@ -191,9 +190,8 @@ public class ScoreWriter{
 					}
 				}
 			}
-			System.out.println(uniqueWriting.get(i) + "," + w + ",,,,," + c / n + ",,,,," + (float)w / (float)c);
+			System.out.println(uniqueWriting.get(i) + "," + w + ",,,,," + (float)w / (float)c + ",,,,," + c / n);
 		}
-		System.out.println();
 		for(int i = 0; i < uniqueMathNC.size(); i++){
 			int w = 0;
 			int c = 0;
@@ -207,9 +205,8 @@ public class ScoreWriter{
 					}
 				}
 			}
-			System.out.println(uniqueMathNC.get(i) + "," + w + ",,,,," + c / n + ",,,,," + (float)w / (float)c);
+			System.out.println(uniqueMathNC.get(i) + "," + w + ",,,,," + (float)w / (float)c + ",,,,," + c / n);
 		}
-		System.out.println();
 		for(int i = 0; i < uniqueMathC.size(); i++){
 			int w = 0;
 			int c = 0;
@@ -223,7 +220,7 @@ public class ScoreWriter{
 					}
 				}
 			}
-			System.out.println(uniqueMathC.get(i) + "," + w + ",,,,," + c / n + ",,,,," + (float)w / (float)c);
+			System.out.println(uniqueMathC.get(i) + "," + w + ",,,,," + (float)w / (float)c + ",,,,," + c / n);
 		}
 	}	
 }
